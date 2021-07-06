@@ -36,6 +36,10 @@ dependencies {
 
 	implementation 'org.postgresql:postgresql'
 
+	testImplementation 'org.junit.platform:junit-platform-runner:1.2.0'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.batch:spring-batch-test'
 }
