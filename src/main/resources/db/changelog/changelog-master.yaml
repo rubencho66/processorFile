@@ -1,0 +1,100 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: ruben_triana
+      changes:
+        - createTable:
+            tableName: geographic_location
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: ${autoIncrement}
+                  constraints:
+                    - primaryKeyName: geographic_location_pk
+                    - primaryKey: true
+                    - nullable: false
+              - column:
+                  name: ip_from
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: ip_to
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: country_code
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: region
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: longitude
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time_zone
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_creation
+                  type: timestamp without time zone
+                  constraints:
+                    nullable: false
+
+        - createTable:
+            tableName: error_geographic_location
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: ${autoIncrement}
+                  constraints:
+                    - primaryKeyName: error_geographic_location_pk
+                    - primaryKey: true
+                    - nullable: false
+              - column:
+                  name: ip_from
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ip_to
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: error_description
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_creation
+                  type: timestamp without time zone
+                  constraints:
+                    nullable: false
